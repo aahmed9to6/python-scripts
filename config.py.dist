@@ -1,0 +1,9 @@
+#!/usr/bin/python
+
+USERNAME ='info@example.com'
+PASSWORD ='qwerty123'
+BASE_DOWNLOAD_PATH ='/home/user/Downloads/LinkedInLearning'
+SUBS = True
+COURSES = [
+    'last-segment-of-url'
+]
