@@ -102,7 +102,7 @@ class Lld:
         logging.info('Authenticating to LinkedIn')
         login_page = BeautifulSoup(self.session.get(login_url).text, 'html.parser')
         csrf = login_page.find(id='loginCsrfParam-login')['value']
-        logging.info('Csfr token: %s' % csrf)
+        logging.info('CSRF token: %s' % csrf)
         login_data = urllib.urlencode(
             {'session_key': config.USERNAME, 'session_password': config.PASSWORD, 'isJsEnabled': 'false',
              'loginCsrfParam': csrf})
@@ -124,6 +124,7 @@ class Lld:
             resp = self.session.get(course_api_url % course)
             course_data = resp.json()['elements'][0]
             course_name = self.format_string(course_data['title'])
+            logging.info('===========================================================================================')
             logging.info('Starting download of course [%s]...' % course_name)
             course_path = '%s/%s' % (self.base_path, course_name)
             chapters_list = course_data['chapters']

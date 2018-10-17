@@ -7,7 +7,7 @@
   </component>
   <component name="PhpInterpreters">
     <interpreters>
-      <interpreter home="$USER_HOME$/.PhpStorm2018.2/system/plugins/idea-php-latest-plugin/php-v7.2.10/php.sh" id="076b3216-576f-4be3-ad55-713b57c250cd" name="PHP latest" debugger_id="php.debugger.XDebug" />
+      <interpreter home="$USER_HOME$/.PhpStorm2018.2/system/plugins/idea-php-latest-plugin/php-v7.2.11/php.sh" id="ef2bfd60-feb1-4c7b-82b1-734803d82c31" name="PHP latest" debugger_id="php.debugger.XDebug" />
     </interpreters>
   </component>
 </project>
