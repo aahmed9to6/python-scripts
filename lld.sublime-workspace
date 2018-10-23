@@ -1,0 +1,245 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "config.py",
+			"settings":
+			{
+				"buffer_size": 1708,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: Install Package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/abdullah/Tuts/lld",
+		"/home/abdullah/Tuts/lld/progress"
+	],
+	"file_history":
+	[
+		"/home/abdullah/Tuts/lld/progress/README.md",
+		"/home/abdullah/Tuts/lld/README.md",
+		"/home/abdullah/Tuts/lld/config.py",
+		"/home/abdullah/Downloads/remote.md",
+		"/home/abdullah/Tuts/lld/lld.py",
+		"/home/abdullah/Tuts/tuts-progress/README.md",
+		"/home/abdullah/Tuts/tuts-progress/Readme.md",
+		"/home/abdullah/Tuts/linkedin-learning-downloader/config.py",
+		"/home/abdullah/Tuts/linkedin-learning-downloader/lld.py",
+		"/home/abdullah/websites/theme-training/index-3.html",
+		"/home/abdullah/projects/personal/trainings/composer.json",
+		"/home/abdullah/websites/theme-training/category-list-full.html",
+		"/home/abdullah/projects/eKomi/feedback-engagement/src/Ekomi/AdminBundle/Resources/views/CSV/create_bulk.html.twig",
+		"/home/abdullah/Desktop/testing.html",
+		"/home/abdullah/Downloads/Lynda - Drupal 8 Essentials 2 Building Out Your Website/script.php",
+		"/home/abdullah/Desktop/todox.txt",
+		"/home/abdullah/projects/personal/trainings/remote.php",
+		"/home/abdullah/projects/personal/trainings/version.php",
+		"/home/abdullah/projects/personal/trainings/status.php",
+		"/home/abdullah/projects/personal/trainings/.user.ini",
+		"/home/abdullah/projects/personal/trainings/settings/templates/settingsPage.php",
+		"/home/abdullah/projects/personal/trainings/config/config.sample.php",
+		"/home/abdullah/projects/personal/trainings/config/config.php",
+		"/home/abdullah/projects/personal/trainings/db_structure.xml",
+		"/home/abdullah/projects/personal/trainings/public.php",
+		"/home/abdullah/projects/personal/trainings/settings/Application.php",
+		"/home/abdullah/projects/personal/trainings/index.php",
+		"/home/abdullah/projects/personal/trainings/lib/base.php",
+		"/home/abdullah/projects/personal/trainings/core/templates/message.html",
+		"/home/abdullah/projects/personal/trainings/core/templates/layout.guest.php",
+		"/home/abdullah/projects/personal/trainings/core/templates/layout.base.php",
+		"/home/abdullah/websites/admin/vtdes.ru/demo/wgboard/index-blog.html"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "config.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1708,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								142,
+								142
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "lld.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 309.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

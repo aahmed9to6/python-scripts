@@ -156,7 +156,6 @@ https://www.linkedin.com/learning/linux-system-maintenance
 https://www.linkedin.com/learning/linux-package-managers-and-repositories
 https://www.linkedin.com/learning/learning-ubuntu-server
 https://www.linkedin.com/learning/graphite-and-grafana-visualizing-application-performance
-https://www.linkedin.com/learning/amazon-web-services-monitoring-and-metrics
 https://www.linkedin.com/learning/aws-for-devops-security-governance-and-validation
 https://www.linkedin.com/learning/amazon-web-services-data-security
 https://www.linkedin.com/learning/penetration-testing-advanced-kali-linux
@@ -235,7 +234,6 @@ https://www.linkedin.com/learning/linux-performance-tuning
 https://www.linkedin.com/learning/database-clinic-mysql
 https://www.linkedin.com/learning/react-building-large-apps
 https://www.linkedin.com/learning/amazon-web-services-essential-training-2
-https://www.linkedin.com/learning/python-projects
 https://www.linkedin.com/learning/learning-linux-command-line-2016
 https://www.linkedin.com/learning/building-an-ubuntu-home-server
 https://www.linkedin.com/learning/four-semesters-of-computer-science-in-5-hours
@@ -345,4 +343,8 @@ https://www.linkedin.com/learning/finance-essentials-for-small-business
 https://www.linkedin.com/learning/starting-a-business-with-family-and-friends
 https://www.linkedin.com/learning/finance-foundations-income-taxes
 https://www.linkedin.com/learning/balancing-work-and-life
+https://www.linkedin.com/learning/betty-liu-on-career-success
+https://www.linkedin.com/learning/body-language-for-leaders
+https://www.linkedin.com/learning/jodi-glickman-on-pitching-yourself
+https://www.linkedin.com/learning/amazon-web-services-for-data-science
 ```
