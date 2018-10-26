@@ -172,6 +172,7 @@ class Lld:
                 except (KeyError, IndexError):
                     logging.info('Can\'t download an exercise file for course [%s]' % course_name)
                 else:
+                     logging.info('Downloading course exercise [%s]' % ex_name)
                      self.download_file(ex_url, course_path, ex_name)
             description = course_data['description']
             logging.info('Downloading course description')

@@ -11,7 +11,7 @@
 			"file": "config.py",
 			"settings":
 			{
-				"buffer_size": 1708,
+				"buffer_size": 5509,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -59,8 +59,8 @@
 	"file_history":
 	[
 		"/home/abdullah/Tuts/lld/progress/README.md",
-		"/home/abdullah/Tuts/lld/README.md",
 		"/home/abdullah/Tuts/lld/config.py",
+		"/home/abdullah/Tuts/lld/README.md",
 		"/home/abdullah/Downloads/remote.md",
 		"/home/abdullah/Tuts/lld/lld.py",
 		"/home/abdullah/Tuts/tuts-progress/README.md",
@@ -107,6 +107,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"/",
+			"\\n",
+			"https://www.linkedin.com/learning/"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -114,6 +117,8 @@
 		"regex": true,
 		"replace_history":
 		[
+			"',\\n",
+			"'"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -133,7 +138,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1708,
+						"buffer_size": 5509,
 						"regions":
 						{
 						},
@@ -199,7 +204,7 @@
 	"project": "lld.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 70.0
 	},
 	"save_all_on_build": true,
 	"select_file":
