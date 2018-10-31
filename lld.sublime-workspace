@@ -7,15 +7,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "config.py",
-			"settings":
-			{
-				"buffer_size": 5509,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -58,11 +49,13 @@
 	],
 	"file_history":
 	[
-		"/home/abdullah/Tuts/lld/progress/README.md",
+		"/home/abdullah/Tuts/lld/links.txt",
+		"/home/abdullah/Tuts/lld/scd.py",
+		"/home/abdullah/Tuts/lld/lld.py",
 		"/home/abdullah/Tuts/lld/config.py",
+		"/home/abdullah/Tuts/lld/progress/README.md",
 		"/home/abdullah/Tuts/lld/README.md",
 		"/home/abdullah/Downloads/remote.md",
-		"/home/abdullah/Tuts/lld/lld.py",
 		"/home/abdullah/Tuts/tuts-progress/README.md",
 		"/home/abdullah/Tuts/tuts-progress/Readme.md",
 		"/home/abdullah/Tuts/linkedin-learning-downloader/config.py",
@@ -107,6 +100,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"headers",
+			"download_desc",
 			"/",
 			"\\n",
 			"https://www.linkedin.com/learning/"
@@ -129,39 +124,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "config.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5509,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								142,
-								142
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
