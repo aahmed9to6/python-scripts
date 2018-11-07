@@ -7,6 +7,15 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "config.py",
+			"settings":
+			{
+				"buffer_size": 3503,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -49,11 +58,16 @@
 	],
 	"file_history":
 	[
+		"/home/abdullah/Tuts/lld/config.py",
+		"/home/abdullah/Tuts/lld/lld.py",
+		"/home/abdullah/Tuts/lld/lld2.py",
+		"/home/abdullah/Tuts/lld/lld3.py",
+		"/home/abdullah/Tuts/lld/progress/README.md",
+		"/home/abdullah/Tuts/lld/config3.py",
+		"/home/abdullah/Tuts/lld/config2.py",
+		"/home/abdullah/Tuts/lld/config.pyc",
 		"/home/abdullah/Tuts/lld/links.txt",
 		"/home/abdullah/Tuts/lld/scd.py",
-		"/home/abdullah/Tuts/lld/lld.py",
-		"/home/abdullah/Tuts/lld/config.py",
-		"/home/abdullah/Tuts/lld/progress/README.md",
 		"/home/abdullah/Tuts/lld/README.md",
 		"/home/abdullah/Downloads/remote.md",
 		"/home/abdullah/Tuts/tuts-progress/README.md",
@@ -100,6 +114,25 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"5",
+			"COURSES2",
+			"COURSES",
+			"config",
+			"course_data",
+			"iot-foundations-operating-systems-fundamentals",
+			"numpy-",
+			"\\n",
+			"aws-for-architects-advanced-security",
+			"/welcome",
+			"https://www.linkedin.com/learning/",
+			"\\n",
+			"https://www.linkedin.com/learning/",
+			"\\n",
+			"https://www.linkedin.com/learning/",
+			"\\n",
+			"https://www.linkedin.com/learning/",
+			"\\n",
+			"https://www.linkedin.com/learning/",
 			"headers",
 			"download_desc",
 			"/",
@@ -113,6 +146,16 @@
 		"replace_history":
 		[
 			"',\\n",
+			"'",
+			"',\\n",
+			"'",
+			"',\\n",
+			"'",
+			"',\\n",
+			"'",
+			"',\\n",
+			"'",
+			"',\\n",
 			"'"
 		],
 		"reverse": false,
@@ -124,8 +167,38 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "config.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3503,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								248,
+								248
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

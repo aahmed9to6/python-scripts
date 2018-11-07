@@ -120,7 +120,7 @@ class Lld:
         self.session.headers['Cookie'] = self.plain_cookies(requests.utils.dict_from_cookiejar(self.session.cookies))
         self.session.headers.pop('Accept')
 
-        for course in config.COURSES:
+        for course in config.COURSES2:
             resp = self.session.get(course_api_url % course)
             course_data = resp.json()['elements'][0]
             course_name = self.format_string(course_data['title'])

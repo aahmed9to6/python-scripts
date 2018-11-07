@@ -987,5 +987,4 @@ https://www.linkedin.com/learning/advanced-google-analytics-2
 https://www.linkedin.com/learning/maya-2018-essential-training
 https://www.linkedin.com/learning/google-sites-essential-training-2
 https://www.linkedin.com/learning/learning-apache-cordova
-
 ```
