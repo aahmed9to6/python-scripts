@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
-USERNAME ='aahmed@devconcerns.com'
-PASSWORD ='f@k33rHun'
+USERNAME =''
+PASSWORD =''
 BASE_DOWNLOAD_PATH = '/home/abdullah/Tuts/'
 SUBS = True
 COURSES = [
@@ -90,6 +90,15 @@ COURSES = [
 ]
 
 COURSES2 = [
+	'where-to-focus-weaknesses-or-strengths',
+	'job-skills-learning-the-basics',
+	'learning-to-be-approachable',
+	'managing-employee-performance-problems-3',
+	'being-a-good-mentor',
+	'writing-formal-business-letters-and-emails',
+	'finding-your-introvert-extrovert-balance-in-the-workplace',
+	'running-kubernetes-on-aws-eks',
+	'learning-amazon-web-services-aws-for-developers',
 	'negotiation-skills',
 	'stay-lean-with-kanban',
 	'responsive-layout',
@@ -171,5 +180,11 @@ COURSES2 = [
 	'learning-excel-2019',
 	'preparing-for-successful-communication',
 	'learning-word-2019',
-	'word-2019-essential-training'
+	'word-2019-essential-training',
+	'asking-questions-at-work',
+	'vanilla-javascript-web-workers',
+	'vanilla-javascript-service-workers',
+	'javascript-patterns',
+	'vanilla-javascript-web-performance-optimization-apis',
+	'react-spas'
 ]
