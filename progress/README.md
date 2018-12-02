@@ -1031,6 +1031,20 @@ https://www.linkedin.com/learning/asking-questions-at-work-2
 https://www.linkedin.com/learning/making-and-learning-from-mistakes-2
 https://www.linkedin.com/learning/how-to-quit-your-job-the-right-way
 https://www.linkedin.com/learning/how-to-get-the-most-from-your-temporary-work-placement
+https://www.linkedin.com/learning/ruby-essential-training-1-the-basics
+https://www.linkedin.com/learning/ruby-essential-training-2-classes-and-modules
+https://www.linkedin.com/learning/ruby-essential-training
+https://www.linkedin.com/learning/ruby-on-rails-5-essential-training
+
+https://www.linkedin.com/learning/code-clinic-ruby
+https://www.linkedin.com/learning/ruby-testing-with-rspec
+https://www.linkedin.com/learning/ruby-on-rails-5-new-features
+https://www.linkedin.com/learning/ruby-on-rails-get-more-from-activerecord
+https://www.linkedin.com/learning/adding-stripe-payments-to-your-ruby-on-rails-application
+https://www.linkedin.com/learning/learning-sinatra
+https://www.linkedin.com/learning/installing-and-running-ruby-on-rails-5-windows
+https://www.linkedin.com/learning/installing-and-running-ruby-on-rails-5-mac
+
 ```
 ### Tips:
 ```

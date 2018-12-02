@@ -223,7 +223,19 @@ COURSES2 = [
 	'marketing-tips-2',
 	'personal-effectiveness-tips',
 	'personal-finance-tips-and-tricks',
-	'creative-quick-tips'
+	'creative-quick-tips',
+	'ruby-essential-training-1-the-basics',
+	'ruby-essential-training-2-classes-and-modules',
+	'ruby-essential-training',
+	'ruby-on-rails-5-essential-training',
+	'code-clinic-ruby',
+	'ruby-testing-with-rspec',
+	'ruby-on-rails-5-new-features',
+	'ruby-on-rails-get-more-from-activerecord',
+	'adding-stripe-payments-to-your-ruby-on-rails-application',
+	'learning-sinatra',
+	'installing-and-running-ruby-on-rails-5-windows',
+	'installing-and-running-ruby-on-rails-5-mac'
 ]
 WEEKLY = [
 	'excel-weekly-challenge',
