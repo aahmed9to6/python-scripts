@@ -237,6 +237,7 @@ COURSES2 = [
 	'installing-and-running-ruby-on-rails-5-windows',
 	'installing-and-running-ruby-on-rails-5-mac'
 ]
+
 WEEKLY = [
 	'excel-weekly-challenge',
 	'agile-challenges-weekly-tips',
