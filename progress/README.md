@@ -512,7 +512,6 @@ https://www.linkedin.com/learning/six-sigma-black-belt
 https://www.linkedin.com/learning/six-sigma-green-belt
 https://www.linkedin.com/learning/excel-statistics-essential-training-2
 https://www.linkedin.com/learning/six-sigma-foundations
-https://www.linkedin.com/learning/search?entityType=COURSE&keywords=Project%20Management%20Foundations
 https://www.linkedin.com/learning/operational-excellence-foundations
 https://www.linkedin.com/learning/learning-minitab
 https://www.linkedin.com/learning/project-management-foundations-teams

@@ -66,37 +66,50 @@ class Lld:
 
     def download_file(self, url, path, file_name):
         resp = self.session.get(url, stream=True)
+        cPath = path + '/' + file_name;
         if not os.path.exists(path):
             os.makedirs(path)
         try:
-            with open(path + '/' + file_name, 'wb') as f:
-                for chunk in resp.iter_content(chunk_size=1024):
-                    if chunk:
-                        f.write(chunk)
+            if not os.path.exists(cPath):
+                logging.info('Started downloading video [%s]' % file_name)
+                with open(path + '/' + file_name, 'wb') as f:
+                    for chunk in resp.iter_content(chunk_size=4096):
+                        if chunk:
+                            f.write(chunk)
+                logging.info('Finished downloading video [%s]' % file_name)
+            else:
+                logging.info('Skipped video [%s]' % file_name)
         except Exception as e:
             os.remove(path + '/' + file_name)
             print(e)
 
     def download_sub(self, subs, path, file_name):
-        with open(path + '/' + file_name, 'a') as f:
-            i = 1
-            for sub in subs:
-                t_start = sub['transcriptStartAt']
-                if i == len(subs):
-                    t_end = t_start + 5000
-                else:
-                    t_end = subs[i]['transcriptStartAt']
-                caption = sub['caption']
-                f.write('%s\n' % str(i))
-                f.write('%s --> %s\n' % (self.format_time(t_start), self.format_time(t_end)))
-                f.write('%s\n\n' % caption)
-                i += 1
+        cPath = path + '/' + file_name;
+        if not os.path.exists(cPath):
+            logging.info('Downloading subtitles')
+            with open(path + '/' + file_name, 'a') as f:
+                i = 1
+                for sub in subs:
+                    t_start = sub['transcriptStartAt']
+                    if i == len(subs):
+                        t_end = t_start + 5000
+                    else:
+                        t_end = subs[i]['transcriptStartAt']
+                    caption = sub['caption']
+                    f.write('%s\n' % str(i))
+                    f.write('%s --> %s\n' % (self.format_time(t_start), self.format_time(t_end)))
+                    f.write('%s\n\n' % caption)
+                    i += 1
+        else:
+            logging.info('Skipped subtitles')
 
     def download_desc(self, desc, course_url, path, file_name):
+        cPath = path + '/' + file_name;
         if not os.path.exists(path):
             os.makedirs(path)
-        with open(path + '/' + file_name, 'a') as f:
-            f.write('%s\n\n%s' % (desc, course_url))
+        if not os.path.exists(cPath):
+            with open(path + '/' + file_name, 'a') as f:
+                f.write('%s\n\n%s' % (desc, course_url))
 
     def get_logged_session(self):
         logging.info('Authenticating to LinkedIn')
@@ -150,7 +163,6 @@ class Lld:
                     except:
                         logging.error('Can\'t download the video [%s], probably is only for premium users' % video_name)
                         break
-                    logging.info('Downloading video [%s]' % video_name)
                     self.download_file(video_url, chapter_path, '%s - %s.mp4' % (str(video_index).zfill(2), video_name))
                     video_data = video_data.json()['elements'][0]
                     if config.SUBS:
@@ -159,7 +171,6 @@ class Lld:
                         except KeyError:
                             logging.info('No subtitles avaible')
                         else:
-                            logging.info('Downloading subtitles')
                             self.download_sub(subs, chapter_path, '%s - %s.srt' % (str(video_index).zfill(2), video_name))
                     video_index += 1
                 chapter_index += 1
