@@ -71,14 +71,14 @@ class Lld:
             os.makedirs(path)
         try:
             if not os.path.exists(cPath):
-                logging.info('Started downloading video [%s]' % file_name)
+                logging.info('Started downloading file [%s]' % file_name)
                 with open(path + '/' + file_name, 'wb') as f:
                     for chunk in resp.iter_content(chunk_size=4096):
                         if chunk:
                             f.write(chunk)
-                logging.info('Finished downloading video [%s]' % file_name)
+                logging.info('Finished downloading file [%s]' % file_name)
             else:
-                logging.info('Skipped video [%s]' % file_name)
+                logging.info('-- Skipped --')
         except Exception as e:
             os.remove(path + '/' + file_name)
             print(e)
@@ -101,7 +101,7 @@ class Lld:
                     f.write('%s\n\n' % caption)
                     i += 1
         else:
-            logging.info('Skipped subtitles')
+            logging.info('-- Skipped --')
 
     def download_desc(self, desc, course_url, path, file_name):
         cPath = path + '/' + file_name;
