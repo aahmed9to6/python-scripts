@@ -5,22 +5,6 @@ PASSWORD ='coeus123'
 BASE_DOWNLOAD_PATH = '/home/abdullah/Tuts/'
 SUBS = True
 COURSES = [
-	'learning-microsoft-paint-3d',
-	'access-2019-queries',
-	'access-2019-tips-tricks-and-techniques',
-	'access-2019-essential-training',
-	'introduction-to-ppc-with-google-adwords-and-bing-ads',
-	'access-building-a-sales-database',
-	'gmail-essential-training',
-	'learning-moodle-3-5',
-	'learning-microsoft-power-bi-desktop-2',
-	'windows-10-troubleshooting-for-it-support',
-	'html-images-and-figures',
-	'canvas-tips-tricks-techniques',
-	'learning-codeigniter-3',
-	'building-apis-in-php-using-the-slim-micro-framework',
-	'learning-shopify',
-	'learning-cakephp-3',
 	'learning-phpmyadmin',
 	'outlook-2019-essential-training',
 	'learning-outlook-2019',
