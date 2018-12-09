@@ -795,7 +795,6 @@ https://www.linkedin.com/learning/photoshop-cc-2018-one-on-one-fundamentals
 https://www.linkedin.com/learning/photoshop-tips-tricks-techniques-2
 https://www.linkedin.com/learning/photoshop-selections-tips-tricks-and-techniques
 https://www.linkedin.com/learning/outlook-2019-essential-training
-https://www.linkedin.com/learning/search?keywords=learning%202019
 https://www.linkedin.com/learning/learning-outlook-2019
 https://www.linkedin.com/learning/autocad-2019-essential-training
 https://www.linkedin.com/learning/visual-basic-essential-training
@@ -1036,6 +1035,7 @@ https://www.linkedin.com/learning/design-the-web-adding-dynamic-qr-codes
 https://www.linkedin.com/learning/php-accessing-databases-with-pdo-and-mysqli
 https://www.linkedin.com/learning/php-uploading-files-securely
 https://www.linkedin.com/learning/php-exporting-data-to-files
+https://www.linkedin.com/learning/magento-module-creation-and-customization-techniques
 ```
 #### Ruby:
 ```
