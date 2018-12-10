@@ -892,6 +892,17 @@ https://www.linkedin.com/learning/asking-questions-at-work-2
 https://www.linkedin.com/learning/making-and-learning-from-mistakes-2
 https://www.linkedin.com/learning/how-to-quit-your-job-the-right-way
 https://www.linkedin.com/learning/how-to-get-the-most-from-your-temporary-work-placement
+https://www.linkedin.com/learning/learning-matlab-2
+https://www.linkedin.com/learning/plangrid-managing-construction-activities
+https://www.linkedin.com/learning/job-interview-strategies-for-ux-designers
+https://www.linkedin.com/learning/developing-investment-acumen
+https://www.linkedin.com/learning/azure-event-grid
+https://www.linkedin.com/learning/microsoft-certifications-exams-paths-certifications-and-resources-2
+https://www.linkedin.com/learning/bigcommerce-essential-training
+https://www.linkedin.com/learning/windows-server-2019-active-directory-enterprise-infrastructure
+https://www.linkedin.com/learning/python-data-structures-stacks-queues-and-deques
+https://www.linkedin.com/learning/rhce-cert-prep-network-filesystems-using-nfs-and-samba
+https://www.linkedin.com/learning/linux-foundation-cert-prep-network-filesystems-and-file-services-ubuntu
 ```
 #### PHP:
 ```

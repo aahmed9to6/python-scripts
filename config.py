@@ -5,18 +5,6 @@ PASSWORD ='coeus123'
 BASE_DOWNLOAD_PATH = '/home/abdullah/Tuts/'
 SUBS = True
 COURSES = [
-	'access-essential-training-office-365',
-	'elearning-essentials-instructional-design',
-	'microsoft-flow-essential-training',
-	'power-bi-essential-training',
-	'matlab-2018-essential-training',
-	'raspberry-pi-essential-training',
-	'google-ads-adwords-essential-training',
-	'google-slides-essential-training',
-	'bootstrap-4-essential-training',
-	'shopify-essential-training',
-	'graphql-essential-training',
-	'windows-10-fall-creators-update-essential-training',
 	'google-calendar-essential-training-2',
 	'xml-essential-training-2',
 	'quickbooks-payroll-essential-training',
@@ -53,7 +41,17 @@ COURSES = [
 	'photoshop-cc-2018-one-on-one-fundamentals',
 	'photoshop-tips-tricks-techniques-2',
 	'photoshop-selections-tips-tricks-and-techniques',
-	'magento-module-creation-and-customization-techniques'
+	'magento-module-creation-and-customization-techniques',
+	'plangrid-managing-construction-activities',
+	'job-interview-strategies-for-ux-designers',
+	'developing-investment-acumen',
+	'azure-event-grid',
+	'microsoft-certifications-exams-paths-certifications-and-resources-2',
+	'bigcommerce-essential-training',
+	'windows-server-2019-active-directory-enterprise-infrastructure',
+	'python-data-structures-stacks-queues-and-deques',
+	'rhce-cert-prep-network-filesystems-using-nfs-and-samba',
+	'linux-foundation-cert-prep-network-filesystems-and-file-services-ubuntu'
 ]
 
 WEEKLY = [
