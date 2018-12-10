@@ -5,8 +5,6 @@ PASSWORD ='coeus123'
 BASE_DOWNLOAD_PATH = '/home/abdullah/Tuts/'
 SUBS = True
 COURSES = [
-	'learning-apache-cordova',
-	'wordpress-5-essential-training',
 	'building-solutions-using-excel-and-access-2019-together',
 	'programming-foundations-object-oriented-design-3',
 	'excel-in-the-real-world',
