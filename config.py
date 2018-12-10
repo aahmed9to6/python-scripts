@@ -52,7 +52,8 @@ COURSES = [
 	'photoshop-cc-2018-one-on-one-advanced',
 	'photoshop-cc-2018-one-on-one-fundamentals',
 	'photoshop-tips-tricks-techniques-2',
-	'photoshop-selections-tips-tricks-and-techniques'
+	'photoshop-selections-tips-tricks-and-techniques',
+	'magento-module-creation-and-customization-techniques'
 ]
 
 WEEKLY = [
