@@ -5,12 +5,6 @@ PASSWORD ='coeus123'
 BASE_DOWNLOAD_PATH = '/home/abdullah/Tuts/'
 SUBS = True
 COURSES = [
-	'google-calendar-essential-training-2',
-	'xml-essential-training-2',
-	'quickbooks-payroll-essential-training',
-	'advanced-google-analytics-2',
-	'maya-2018-essential-training',
-	'google-sites-essential-training-2',
 	'learning-apache-cordova',
 	'wordpress-5-essential-training',
 	'building-solutions-using-excel-and-access-2019-together',
