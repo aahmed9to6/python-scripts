@@ -977,6 +977,13 @@ https://www.linkedin.com/learning/kali-linux-on-windows-10-first-look
 https://www.linkedin.com/learning/css-animation
 https://www.linkedin.com/learning/making-and-learning-from-mistakes
 https://www.linkedin.com/learning/learning-python-gui-programming
+https://www.linkedin.com/learning/github-actions-first-look
+https://www.linkedin.com/learning/project-management-foundations-risk-3
+https://www.linkedin.com/learning/microsoft-planner-essential-training-3
+https://www.linkedin.com/learning/programming-foundations-secure-coding
+https://www.linkedin.com/learning/aws-security-best-practices-for-developers
+https://www.linkedin.com/learning/xapi-foundations
+https://www.linkedin.com/learning/photoshop-cc-2019-one-on-one-fundamentals
 ```
 #### PHP:
 ```

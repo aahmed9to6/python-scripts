@@ -5,24 +5,6 @@ PASSWORD ='coeus123'
 BASE_DOWNLOAD_PATH = '/home/abdullah/Tuts/'
 SUBS = True
 COURSES = [
-	'learning-the-javascript-language',
-	'interpersonal-communication',
-	'learning-to-say-no',
-	'linux-foundation-cert-prep-system-design-and-deployment-ubuntu',
-	'rhce-cert-prep-mail-systems-using-postfix',
-	'javascript-classes-2',
-	'kali-linux-on-windows-10-first-look',
-	'css-animation',
-	'making-and-learning-from-mistakes',
-	'learning-python-gui-programming',
-	'excel-weekly-challenge',
-	'agile-challenges-weekly-tips',
-	'help-yourself-tech-tips-weekly',
-	'agile-analysis-weekly-tips',
-	'microsoft-project-tips-weekly',
-	'linux-tips-weekly',
-	'supply-chain-and-operations-management-weekly-tips',
-	'personal-finance-tips-weekly-2',
 	'career-clinic-developer-insights',
 	'consulting-professional-weekly-tips',
 	'security-tips-weekly',
@@ -41,5 +23,12 @@ COURSES = [
 	'communication-tips-weekly',
 	'powerpoint-tips-weekly',
 	'time-management-tips-weekly',
-	'excel-tips-weekly'
+	'excel-tips-weekly',
+	'github-actions-first-look',
+	'project-management-foundations-risk-3',
+	'microsoft-planner-essential-training-3',
+	'programming-foundations-secure-coding',
+	'aws-security-best-practices-for-developers',
+	'xapi-foundations',
+	'photoshop-cc-2019-one-on-one-fundamentals'
 ]
