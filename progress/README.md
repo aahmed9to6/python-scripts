@@ -1019,6 +1019,18 @@ https://www.linkedin.com/learning/the-human-resources-hero
 https://www.linkedin.com/learning/windows-server-2019-manage-monitor-and-maintain-servers
 https://www.linkedin.com/learning/start-young-for-your-best-retirement
 https://www.linkedin.com/learning/iphone-and-ipad-photography-with-ios-12
+https://www.linkedin.com/learning/leading-inclusive-teams
+https://www.linkedin.com/learning/ai-accountability-essential-training
+https://www.linkedin.com/learning/leading-in-government
+https://www.linkedin.com/learning/aws-for-developers-aws-amplify
+https://www.linkedin.com/learning/scaling-your-startup
+https://www.linkedin.com/learning/delivering-results-effectively
+https://www.linkedin.com/learning/managing-international-projects-2
+https://www.linkedin.com/learning/persuasive-coaching
+https://www.linkedin.com/learning/social-media-for-leadership
+https://www.linkedin.com/learning/learning-wix
+https://www.linkedin.com/learning/foundations-of-the-fourth-industrial-revolution-industry-4-0
+https://www.linkedin.com/learning/sap-erp-essential-training
 ```
 #### PHP:
 ```

@@ -7,7 +7,7 @@ import os.path
 if len(sys.argv) > 1:
 	my_url = sys.argv[1]
 else:
-	my_url = "https://gaana.com/playlist/abdullahahmed-bxhwz-dump-vkx94dgv3m"
+	my_url = "https://gaana.com/playlist/abdullahahmed-bxhwz-todo-jkrmd4wjb6"
 print my_url
 uclient = uo(my_url)
 page_html = uclient.read()
@@ -66,20 +66,19 @@ for s in song:
 		file_size = int(meta.getheaders("Content-Length")[0])
 		print "Downloading: %s Bytes: %s" % (file_name, file_size)
 
-		file_size_dl = 0
-		block_sz = 8192
-		while True:
-		    buffer = u.read(block_sz)
-		    if not buffer:
-		        break
+		# file_size_dl = 0
+		# block_sz = 8192
+		# while True:
+		#     buffer = u.read(block_sz)
+		#     if not buffer:
+		#         break
 
-		    file_size_dl += len(buffer)
-		    f.write(buffer)
-		    # status = r"%10d  [%3.2f%%]" % (file_size_dl, file_size_dl * 100. / file_size)
-		    # status = status + chr(8)*(len(status)+1)
-		print "Downloaded" + "\n"
+		#     file_size_dl += len(buffer)
+		#     f.write(buffer)
+		#     # status = r"%10d  [%3.2f%%]" % (file_size_dl, file_size_dl * 100. / file_size)
+		#     # status = status + chr(8)*(len(status)+1)
+		# print "Downloaded" + "\n"
 		fcsv.write(",Downloaded\n")
-		f.close()
 		del d_page
 	except Exception:
 		fcsv.write("\n")
