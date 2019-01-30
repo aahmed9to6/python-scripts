@@ -11,5 +11,5 @@ THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 from .colors import *
 
 def banner():
-    banner = '' % (fc, sb,fc, sb,fc, sb, fm, sb, fy, sb, fy, sb, fy,sd, fg, sd, fy, sd, fg, sd, fy, sd, fg, sd)
+    banner = ''
     return banner
