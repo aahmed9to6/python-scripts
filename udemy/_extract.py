@@ -2,6 +2,20 @@
 # -*- coding: utf-8 -*-
 
 '''
+
+Author  : Nasir Khan (r0ot h3x49)
+Github  : https://github.com/r0oth3x49
+License : MIT
+
+
+Copyright (c) 2018 Nasir Khan (r0ot h3x49)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the
+Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, 
+and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR
 ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH 
@@ -30,7 +44,8 @@ from ._compat import (
             COURSE_URL,
             ParseCookie,
             MY_COURSES_URL,
-            COURSE_SEARCH
+            COURSE_SEARCH,
+            COLLECTION_URL
             )
 from ._sanitize import (
             slugify,
@@ -51,26 +66,30 @@ class Udemy(ProgressBar):
     def _clean(self, text):
         ok = re.compile(r'[^\\/:*?"<>|]')
         text = "".join(x if ok.match(x) else "_" for x in text)
-        return re.sub('\.+$', '', text.rstrip()) if text.endswith(".") else text.rstrip()
+        text = re.sub(r'\.+$', '', text.strip())
+        return text
 
     def _course_name(self, url):
-        # mobj = re.search(r'(?i)(?:(.+)\.com/(?P<course_name>[a-zA-Z0-9_-]+))', url, re.I)
-        mobj = re.search(r'(?i)(?://(?P<portal_name>.+?).udemy.com/(?P<course_name>[a-zA-Z0-9_-]+))', url)
+        mobj = re.search(r'(?i)(?://(?P<portal_name>.+?).udemy.com/(?:(course|draft)/)?(?P<name_or_id>[a-zA-Z0-9_-]+))', url)
         if mobj:
-            return mobj.group('portal_name'), mobj.group('course_name')
+            return mobj.group('portal_name'), mobj.group('name_or_id')
 
     def _extract_cookie_string(self, raw_cookies):
         cookies = {}
-        cookie_parser = ParseCookie()
         try:
-            cookie_string = re.search(r'(?i)(?:Cookie\:(?P<cookie>.+)\s*)', raw_cookies)
+            # client_id = re.search(r'(?i)(?:client_id=(?P<client_id>\w+))', raw_cookies)
+            access_token = re.search(r'(?i)(?:access_token=(?P<access_token>\w+))', raw_cookies)
         except:
             sys.stdout.write(fc + sd + "[" + fr + sb + "-" + fc + sd + "] : " + fr + sb + "Cookies error, Request Headers is required.\n")
             sys.stdout.write(fc + sd + "[" + fm + sb + "i" + fc + sd + "] : " + fg + sb + "Copy Request Headers for single request to a file, while you are logged in.\n")
             sys.exit(0)
-        cookie_parser.load(cookie_string.group('cookie'))
-        for key, cookie in cookie_parser.items():
-            cookies[key] = cookie.value
+        if not access_token:
+            sys.stdout.write(fc + sd + "[" + fr + sb + "-" + fc + sd + "] : " + fr + sb + "Cookies error, unable to find access_token, proper cookies required.\n")
+            sys.stdout.flush()
+            sys.exit(0)
+        access_token = access_token.group('access_token')
+        cookies.update({'access_token': access_token})
+        #'client_id': client_id.group('client_id'),
         return cookies
 
     def _sanitize(self, unsafetext):
@@ -97,16 +116,8 @@ class Udemy(ProgressBar):
     def _logout(self):
         return self._session.terminate()
 
-    def __extract_course(self, response, course_name):
-        _temp = {}
-        if response:
-            for entry in response:
-                if entry.get('published_title') == course_name:
-                    _temp = entry
-        return _temp
-
-    def _extract_course_info(self, url):
-        portal_name, course_name = self._course_name(url)
+    def _subscribed_courses(self, portal_name, course_name):
+        results = []
         self._session._headers.update({
             'Host' : '{portal_name}.udemy.com'.format(portal_name=portal_name),
             'Referer' : 'https://{portal_name}.udemy.com/home/my-courses/search/?q={course_name}'.format(portal_name=portal_name, course_name=course_name)
@@ -124,25 +135,70 @@ class Udemy(ProgressBar):
             sys.exit(0)
         else:
             results = webpage.get('results', [])
-            if not results:
-                try:
-                    url = MY_COURSES_URL.format(portal_name=portal_name)
-                    webpage = self._session._get(url).json()
-                except conn_error as e:
-                    sys.stdout.write(fc + sd + "[" + fr + sb + "-" + fc + sd + "] : " + fr + sb + "Connection error : make sure your internet connection is working.\n")
-                    time.sleep(0.8)
-                    sys.exit(0)
-                except (ValueError, Exception) as e:
-                    sys.stdout.write(fc + sd + "[" + fr + sb + "-" + fc + sd + "] : " + fr + sb + "%s.\n" % (e))
-                    time.sleep(0.8)
-                    sys.exit(0)
-                else:
-                    results = webpage.get('results', [])
+        return results
+
+    def _my_courses(self, portal_name):
+        results = []
+        try:
+            url = MY_COURSES_URL.format(portal_name=portal_name)
+            webpage = self._session._get(url).json()
+        except conn_error as e:
+            sys.stdout.write(fc + sd + "[" + fr + sb + "-" + fc + sd + "] : " + fr + sb + "Connection error : make sure your internet connection is working.\n")
+            time.sleep(0.8)
+            sys.exit(0)
+        except (ValueError, Exception) as e:
+            sys.stdout.write(fc + sd + "[" + fr + sb + "-" + fc + sd + "] : " + fr + sb + "%s.\n" % (e))
+            time.sleep(0.8)
+            sys.exit(0)
+        else:
+            results = webpage.get('results', [])
+        return results
+
+    def _subscribed_collection_courses(self, portal_name):
+        url = COLLECTION_URL.format(portal_name=portal_name)
+        courses_lists = []
+        try:
+            webpage = self._session._get(url).json()
+        except conn_error as e:
+            sys.stdout.write(fc + sd + "[" + fr + sb + "-" + fc + sd + "] : " + fr + sb + "Connection error : make sure your internet connection is working.\n")
+            time.sleep(0.8)
+            sys.exit(0)
+        except (ValueError, Exception) as e:
+            sys.stdout.write(fc + sd + "[" + fr + sb + "-" + fc + sd + "] : " + fr + sb + "%s.\n" % (e))
+            time.sleep(0.8)
+            sys.exit(0)
+        else:
+            results = webpage.get('results', [])
+            if results:
+                [courses_lists.extend(courses.get('courses', [])) for courses in results if courses.get('courses', [])]
+        return courses_lists
+
+    def __extract_course(self, response, course_name):
+        _temp = {}
+        if response:
+            for entry in response:
+                course_id = entry.get('id')
+                published_title = entry.get('published_title')
+                if course_name in (published_title, course_id):
+                    _temp = entry
+        return _temp
+
+    def _extract_course_info(self, url):
+        portal_name, course_name = self._course_name(url)
+        course = {}
+        results = self._subscribed_courses(portal_name=portal_name, course_name=course_name)
+        if not results:
+            results = self._my_courses(portal_name=portal_name)
+        if results:
             course = self.__extract_course(response=results, course_name=course_name)
+        if not course:
+            results = self._subscribed_collection_courses(portal_name=portal_name)
+            course = self.__extract_course(response=results, course_name=course_name)
+
         if course:
             course.update({'portal_name' : portal_name})
             return course.get('id'), course
-        else:
+        if not course:
             sys.stdout.write('\033[2K\033[1G\r\r' + fc + sd + "[" + fr + sb + "-" + fc + sd + "] : " + fg + sb + "Downloading course information, course id not found .. (%s%sfailed%s%s)\n" % (fr, sb, fg, sb))
             sys.stdout.write(fc + sd + "[" + fw + sb + "i" + fc + sd + "] : " + fw + sb + "It seems either you are not enrolled or you have to visit the course atleast once while you are logged in.\n")
             sys.stdout.write(fc + sd + "[" + fm + sb + "*" + fc + sd + "] : " + fg + sb + "Trying to logout now...\n")
@@ -180,7 +236,11 @@ class Udemy(ProgressBar):
         self._session._headers.update({'Referer' : url})
         url = COURSE_URL.format(portal_name=portal_name, course_id=course_id)
         try:
-            resp = self._session._get(url).json()
+            resp = self._session._get(url)
+            if resp.status_code == 502:
+                resp = self._extract_large_course_content(url=url)
+            else:
+                resp = resp.json()
         except conn_error as e:
             sys.stdout.write(fc + sd + "[" + fr + sb + "-" + fc + sd + "] : " + fr + sb + "Connection error : make sure your internet connection is working.\n")
             time.sleep(0.8)
@@ -328,7 +388,7 @@ class Udemy(ProgressBar):
                 download_url = track.get('url')
                 if not download_url or not isinstance(download_url, encoding):
                     continue
-                lang = track.get('language') or track.get('srclang') or track.get('label') or track['locale'].get('locale').split('_')[0]
+                lang = track.get('language') or track.get('srclang') or track.get('label') or track['locale_id'].split('_')[0]
                 ext = 'vtt' if 'vtt' in download_url.rsplit('.', 1)[-1] else 'srt'
                 _temp.append({
                     'type' : 'subtitle',
@@ -475,7 +535,7 @@ class Udemy(ProgressBar):
                             text = '\r' + fc + sd + "[" + fm + sb + "*" + fc + sd + "] : " + fg + sb + "Downloading course information .. "
                             self._spinner(text)
                             lecture_index   = entry.get('object_index')
-                            lecture_title   = self._sanitize(entry.get('title'))
+                            lecture_title   = self._clean(self._sanitize(entry.get('title')))
                             lecture         = "{0:03d} {1!s}".format(lecture_index, lecture_title)
                             unsafe_lecture  = u'{0:03d} '.format(lecture_index) + entry.get('title')
                             data, subs      = self._html_to_json(view_html, lecture_id)
@@ -513,7 +573,7 @@ class Udemy(ProgressBar):
                             text = '\r' + fc + sd + "[" + fm + sb + "*" + fc + sd + "] : " + fg + sb + "Downloading course information .. "
                             self._spinner(text)
                             lecture_index   = entry.get('object_index')
-                            lecture_title   = self._sanitize(entry.get('title'))
+                            lecture_title   = self._clean(self._sanitize(entry.get('title')))
                             lecture         = "{0:03d} {1!s}".format(lecture_index, lecture_title)
                             unsafe_lecture  = u'{0:03d} '.format(lecture_index) + self._clean(entry.get('title'))
                             data            = asset.get('stream_urls')

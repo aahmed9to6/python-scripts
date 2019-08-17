@@ -3,6 +3,19 @@
 
 '''
 
+Author  : Nasir Khan (r0ot h3x49)
+Github  : https://github.com/r0oth3x49
+License : MIT
+
+
+Copyright (c) 2018 Nasir Khan (r0ot h3x49)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the
+Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, 
+and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR
 ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH 
@@ -36,7 +49,7 @@ class UdemyAuth(object):
 
     def _form_hidden_input(self, form_id):
         try:
-            webpage = self._session._get(LOGIN_POPUP).text
+            webpage = self._session._get(LOGIN_URL).text
         except conn_error as e:
             sys.stdout.write(fc + sd + "[" + fr + sb + "-" + fc + sd + "] : " + fr + sb + "Connection error : make sure your internet connection is working.\n")
             time.sleep(0.8)
@@ -58,11 +71,11 @@ class UdemyAuth(object):
 
     def authenticate(self, access_token='', client_id=''):
         if not access_token and not client_id:
-            data = {'email' : self.username, 'password' : self.password}
-            auth_response = self._session._post(LOGIN_URL, data=data)
-            auth_cookies, auth_response = auth_response.cookies, auth_response.json()
+            data = self._form_hidden_input(form_id='login-form')
+            auth_response = self._session._post(LOGIN_URL, data=data, redirect=False)
+            auth_cookies = auth_response.cookies
             
-            access_token = auth_response.get('access_token', '')
+            access_token = auth_cookies.get('access_token', '')
             client_id = auth_cookies.get('client_id', '')
         
         if access_token:

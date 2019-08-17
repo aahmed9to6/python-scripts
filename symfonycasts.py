@@ -4,7 +4,7 @@ import requests
 download_suffix = '/download/video'
 
 base_url = 'https://symfonycasts.com'
-course_url = '/screencast/rest-ep2/serializer'
+course_url = '/screencast/symfony'
 
 def get_page_dom():
     url = base_url + course_url
@@ -32,10 +32,7 @@ def generate_download_link(dl):
 
 def save_to_file(links):
     links = generate_download_link(links)
-
-    with open('links.txt', 'w') as f:
-        for i in links:
-            f.write(i + '\n')
+    
 
 def Main():
     html = BeautifulSoup(get_page_dom(), 'html.parser')

@@ -1,6 +1,20 @@
 #!/usr/bin/python
 
 '''
+
+Author  : Nasir Khan (r0ot h3x49)
+Github  : https://github.com/r0oth3x49
+License : MIT
+
+
+Copyright (c) 2018 Nasir Khan (r0ot h3x49)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the
+Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, 
+and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR
 ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH 
@@ -14,6 +28,7 @@ from ._compat import (
                 sys,
                 time,
                 pyver,
+                codecs,
                 compat_urlerr,
                 compat_opener,
                 compat_request,
@@ -236,14 +251,15 @@ class UdemyLectures(object):
             retVal = {"status" : "True", "msg" : "already downloaded"}
             return retVal
         
-        with open(filename, 'wb') as f:
-            try:
-                f.write(html)
-            except Exception as e:
-                retVal = {'status' : 'False', 'msg' : '{}'.format(e)}
-            else:
-                retVal = {'status' : 'True', 'msg' : 'download'}
-        f.close()
+        try:
+            f = codecs.open(filename, 'wb', errors='ignore')
+            f.write(html)
+        except (OSError, Exception, UnicodeDecodeError) as e:
+            retVal = {'status' : 'False', 'msg' : '{}'.format(e)}
+        else:
+            retVal = {'status' : 'True', 'msg' : 'download'}
+            f.close()
+
         return retVal
 
 class UdemyLectureStream(object):
@@ -491,27 +507,21 @@ class UdemyLectureAssets(object):
         filename += ".{}".format(self.extension)
         return filename
 
-    def _write_external_links(self, filepath):
+    def _write_external_links(self, filepath, unsafe=False):
         retVal = {}
         filename = filepath
-        if pyver == 3:
-            with open('{}.txt'.format(filename), 'a', encoding='utf-8') as f:
-                try:
-                    f.write('{}\n'.format(self.url))
-                except Exception as e:
-                    retVal = {'status' : 'False', 'msg' : 'Python3 Exception : {}'.format(e)}
-                else:
-                    retVal = {'status' : 'True', 'msg' : 'download'}
-            f.close()
+
+        try:
+            filename += '.txt' if not unsafe else u'.txt'
+            f = codecs.open(filename, 'a', encoding='utf-8', errors='ignore')
+            data = '{}\n'.format(self.url) if not unsafe else u'{}\n'.format(self.url)
+            f.write(data)
+        except (OSError, Exception, UnicodeDecodeError) as e:
+            retVal = {'status' : 'False', 'msg' : '{}'.format(e)}
         else:
-            with open('{}.txt'.format(filename), 'a') as f:
-                try:
-                    f.write('{}\n'.format(self.url))
-                except Exception as e:
-                    retVal = {'status' : 'False', 'msg' : 'Python2 Exception : {}'.format(e)}
-                else:
-                    retVal = {'status' : 'True', 'msg' : 'download'}
+            retVal = {'status' : 'True', 'msg' : 'download'}
             f.close()
+
         return retVal
 
     @property
@@ -577,7 +587,7 @@ class UdemyLectureAssets(object):
         filepath = os.path.join(savedir, filename)
         
         if self.mediatype=='external_link':
-            return self._write_external_links(filepath)
+            return self._write_external_links(filepath, unsafe=unsafe)
 
         if os.path.isfile(filepath):
             retVal = {"status" : "True", "msg" : "already downloaded"}
